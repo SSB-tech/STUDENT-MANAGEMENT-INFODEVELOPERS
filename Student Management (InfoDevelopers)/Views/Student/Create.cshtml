@@ -1,0 +1,97 @@
+﻿@model Student_Management__InfoDevelopers_.Models.students
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@if (TempData["ErrorMessage"] != null)
+{
+<div class="alert alert-danger">
+    <strong>Information</strong> @TempData["ErrorMessage"]
+</div>
+}
+
+<h4>students</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Sno" class="control-label"></label>
+                <input asp-for="Sno" class="form-control" />
+                <span asp-validation-for="Sno" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="EnrolledYear" class="control-label"></label>
+                <select asp-for="EnrolledYear" class="form-select" aria-label="Default select example">
+                    <option selected>Select Enrolled Year</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+                <span asp-validation-for="EnrolledYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faculty" class="control-label"></label>
+                <select asp-for="Faculty" class="form-select" aria-label="Default select example">
+                    <option selected>Select Faculty</option>
+                    <option value="Science">Science</option>
+                    <option value="Management">Management</option>
+                </select>
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <input asp-for="Course" class="form-control" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            <div class="create-submit-btn">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index"><button type="button" class="btn btn-secondary">Back to List</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
